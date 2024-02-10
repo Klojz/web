@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; /* memilih font yang di gunakan di website */
+}
+/* memberi background */
+.banner{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+/* mengatur menu pilihan agar terletak pada pojok kanan atas */
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* menammbah space antara logo dengan menu pilihan */
+}
+/* mengatur logo di pojok kiri atas  */
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px; /* mengatur jarak antar menu pilihan */
+    position: relative;
+}
+/* mengatur warna dan mengubah uppercase atau lower case pada menu pilihan */
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+/* mengatur animasi saat kursor menuju menu pilihan */
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: rgb(100, 0, 0);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+/* mengatur tulisan pada class content */
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* mengatur letak tulisan (making tinggi makin ke bawah letak tulisannya begitu pula sebaliknya) */
+    text-align: center;
+    color: #fff;
+}
+/* mengubah font */
+.content h1{
+    font-size: 50px;
+    margin-top: 80px;
+}
+.content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px; /* mengatur jarak spasi dengan teks di atasnya */
+}
+/* jangan menggunakan pointer "."button */
+/* mengatur tombol */
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #362100;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* membuat tombol menjadi warna coklat sepenuhnya */
+}
+span{
+    background: #362100;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1; /* mmebuat tulisan di tombol agar tetap nampak meskipun berubah menjadi warna coklat sepenuhnya */
+    transition: 0.5s;
+}
+/* membuat animasi saat cursor bergerak ke tombol */
+button:hover span{
+    width: 100%;
+}
+/* menghilangkan border saat cursor menyentuh tombol */
+/*  
+button:hover{
+    border: none;
+}*/
